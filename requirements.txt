@@ -1,3 +1,12 @@
+# Core CV Libraries
 opencv-python
+
+# Data Handling and Utility
 numpy
-deepface
+tqdm
+
+# Scalable Vector Database
+faiss-cpu
+
+# Core ML Runtime (Must have pre-compiled wheels)
+onnxruntime
