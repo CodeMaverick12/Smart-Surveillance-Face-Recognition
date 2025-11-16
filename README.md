@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Smart Surveillance Face Recognition & Re-Identification
 
 This project aims to develop a smart surveillance system capable of real-time face recognition and re-identification for the Pakistani community. It leverages computer vision techniques to detect faces, extract unique facial embeddings, and match them against a database.
@@ -102,3 +103,6 @@ Detailed documentation for individual modules can be found in their respective `
 
 -   [`src/utilis/README.md`](src/utilis/README.md): Documentation for video utility functions.
 -   [`src/detection/README.md`](src/detection/README.md): Documentation for the face detection class.
+=======
+# Smart-Surveillance-Face-Recognition
+>>>>>>> 92714bc7288543aa1d436d105bf184cd7817d24e
