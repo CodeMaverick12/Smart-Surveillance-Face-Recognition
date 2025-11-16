@@ -18,6 +18,7 @@ This project aims to develop a smart surveillance system capable of real-time fa
 │   └── utilis/
 │       ├── video_utils.py
 │       └── README.md
+|       └── sort.py
 ├── models/           # Directory to store pre-trained models (e.g., SSD, MTCNN weights)
 ├── main.py           # Main script to run the surveillance system
 └── README.md         # Project-level documentation
@@ -104,5 +105,4 @@ Detailed documentation for individual modules can be found in their respective `
 -   [`src/utilis/README.md`](src/utilis/README.md): Documentation for video utility functions.
 -   [`src/detection/README.md`](src/detection/README.md): Documentation for the face detection class.
 =======
-# Smart-Surveillance-Face-Recognition
->>>>>>> 92714bc7288543aa1d436d105bf184cd7817d24e
+
