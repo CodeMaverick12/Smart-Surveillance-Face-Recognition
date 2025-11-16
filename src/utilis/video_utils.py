@@ -4,12 +4,12 @@ import cv2
 import numpy as np
 import json
 
-# --- GUARANTEED PATH FIX ---
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.abspath(os.path.join(current_dir, '..'))
 sys.path.insert(0, src_dir)
 
-# ✅ Now import SORT after adding src to path
+
 from utilis.sort import Sort
 from detection.face_detector import FaceDetector
 
