@@ -10,3 +10,6 @@ faiss-cpu
 
 # Core ML Runtime (Must have pre-compiled wheels)
 onnxruntime
+
+filterpy
+scipy

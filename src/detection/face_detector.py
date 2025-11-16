@@ -5,13 +5,16 @@ import numpy as np
 import cv2
 import os
 
-MODEL_DIR = 'models'
+# Get the absolute path to the current file's directory (src/detection/)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Models are in src/detection/models/
+MODEL_DIR = os.path.join(current_dir, 'models')
 DETECTION_PROTO = os.path.join(MODEL_DIR, 'deploy.prototxt')
 DETECTION_MODEL = os.path.join(MODEL_DIR, 'res10_300x300_ssd_iter_140000_fp16.caffemodel')
 RECOGNITION_MODEL = os.path.join(MODEL_DIR, 'arcface_r50.onnx')
-INPUT_SIZE = (112, 112) # Required input size for ArcFace
-
-class FaceProcessor:
+INPUT_SIZE = (112, 112)  # Required input size for ArcFace
+class FaceDetector:
     """
     Handles Face Detection (CV2 DNN) and Embedding (ONNX ArcFace).
     """
@@ -27,7 +30,7 @@ class FaceProcessor:
         self.rec_session = onnxruntime.InferenceSession(RECOGNITION_MODEL, opts, providers=['CPUExecutionProvider'])
         self.rec_input_name = self.rec_session.get_inputs()[0].name
         
-    def get_face_embeddings(self, frame: np.ndarray, confidence_threshold: float = 0.8):
+    def get_face_embeddings(self, frame: np.ndarray, confidence_threshold: float = 0.5):
         """Processes a frame: Detects faces, aligns them (via center crop), and extracts embeddings."""
         (h, w) = frame.shape[:2]
         blob = cv2.dnn.blobFromImage(cv2.resize(frame, (300, 300)), 1.0, (300, 300), (104.0, 177.0, 123.0))
